@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
   m_Name: Rock3
   m_EditorClassIdentifier: 
-  m_AnimatedSprites: []
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  m_AnimatedSprites:
+  - {fileID: -1657236513483380344, guid: d81d5c0cdb3393b449f7570cd3b4e743, type: 3}
+  - {fileID: 8558894220588607466, guid: d81d5c0cdb3393b449f7570cd3b4e743, type: 3}
+  - {fileID: -4827892071770254761, guid: d81d5c0cdb3393b449f7570cd3b4e743, type: 3}
+  - {fileID: -3604461481311086551, guid: d81d5c0cdb3393b449f7570cd3b4e743, type: 3}
+  - {fileID: 6861511599589026595, guid: d81d5c0cdb3393b449f7570cd3b4e743, type: 3}
+  - {fileID: -2417548612333543299, guid: d81d5c0cdb3393b449f7570cd3b4e743, type: 3}
+  - {fileID: 2648045286040330466, guid: d81d5c0cdb3393b449f7570cd3b4e743, type: 3}
+  - {fileID: 2763439710183631591, guid: d81d5c0cdb3393b449f7570cd3b4e743, type: 3}
+  m_MinSpeed: 10
+  m_MaxSpeed: 10
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 0
