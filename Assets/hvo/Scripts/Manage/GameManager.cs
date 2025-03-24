@@ -3,36 +3,16 @@ using UnityEngine;
 
 namespace hvo.Scripts.Manage
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : SingletonManager<GameManager>
     {
-        protected virtual void Awake()
+        private void Update()
         {
-            GameManager[] managers = FindObjectsByType<GameManager>(FindObjectsSortMode.None);
-            if (managers.Length > 1)
+            Vector2 inputPosition = Input.touchCount > 0 ? Input.GetTouch(0).position : Input.mousePosition;
+            Debug.Log(inputPosition);
+
+            if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended))
             {
-                Destroy(gameObject);
-                return;
             }
-        }
-
-        public static GameManager Get()
-        {
-            var tag = nameof(GameManager);
-
-            GameObject managerObject = UnityEngine.GameObject.FindWithTag(tag);
-            if (managerObject != null)
-            {
-                return managerObject.GetComponent<GameManager>();
-            }
-
-            GameObject go = new(tag);
-            go.tag = tag;
-            return go.GetComponent<GameManager>();
-        }
-
-        public void Test()
-        {
-            Debug.Log("Hello, Test");
         }
     }
 }
