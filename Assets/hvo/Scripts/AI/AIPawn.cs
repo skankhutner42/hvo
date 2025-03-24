@@ -23,7 +23,7 @@ namespace hvo.Scripts.AI
             {
                 var dir = m_Destination.Value - transform.position;
                 transform.position += dir.normalized * (Time.deltaTime * m_Speed);
-                
+
                 var distanceToDestination= Vector3.Distance(transform.position, m_Destination.Value);
                 if (distanceToDestination < 0.1f)
                 {
