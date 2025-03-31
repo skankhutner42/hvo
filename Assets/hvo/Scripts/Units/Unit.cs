@@ -1,11 +1,14 @@
-﻿using hvo.Scripts.Manage;
+﻿using hvo.Scripts.AI;
+using hvo.Scripts.Manage;
 using UnityEngine;
 
-public abstract class Unit: MonoBehaviour
+public abstract class Unit : MonoBehaviour
 {
     public bool IsMoving;
 
     protected Animator m_Animator;
+    protected AIPawn m_AIPawn;
+    protected SpriteRenderer m_SpriteRenderer;
 
     protected void Awake()
     {
@@ -14,8 +17,19 @@ public abstract class Unit: MonoBehaviour
             m_Animator = animator;
         }
 
-        var manager = GameManager.Get();
-    }
-    
+        if (TryGetComponent<AIPawn>(out var aiPawn))
+        {Í
+            m_AIPawn = aiPawn;
+        }
 
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    public void MoveTo(Vector3 destination)
+    {
+        var direction = (destination - transform.position).normalized;
+        m_SpriteRenderer.flipX = direction.x < 0;
+
+        m_AIPawn.SetDestination(destination);
+    }
 }

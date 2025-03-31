@@ -11,11 +11,7 @@ namespace hvo.Scripts.AI
         public Vector3? Destination => m_Destination;
 
 
-        private void Start()
-        {
-            SetDestination(new Vector3(4.5f, 0, 0));
-            Debug.Log("Start");
-        }
+      
 
         private void Update()
         {

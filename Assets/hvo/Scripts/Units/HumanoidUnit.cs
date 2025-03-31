@@ -10,6 +10,11 @@ namespace hvo.Scripts.Units
 
         public float CurrentSpeed => m_Velocity.magnitude;
 
+        private void Start()
+        {
+            m_LastVelocity = transform.position;
+        }
+
         protected void Update()
         {
             m_Velocity = new Vector2(
